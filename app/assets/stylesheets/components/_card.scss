@@ -1,0 +1,59 @@
+.card-category {
+  margin: 16px;
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-family: 'Simonetta', cursive;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  a {
+    text-decoration: none;
+  }
+
+}
+
+.card-white {
+  margin: 40px 0;
+  background-color: white;
+  height: 400px;
+  display: flex;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  img {
+    width: 50%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  h1 {
+    margin-bottom: 32px;
+    border-bottom: gray 1px solid;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .card-cocktail-info {
+    padding: 32px;
+    width: 50%;
+    height: 400px;
+    position: relative;
+  }
+
+  .add-dose {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+  }
+
+}

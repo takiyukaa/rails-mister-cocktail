@@ -1,17 +1,23 @@
-<div class="container">
-  <h1>Cocktails</h1>
-  <%= link_to new_cocktail_path do %>
-    <button type="button" class="btn btn-primary">Add a new Cocktail</button>
-  <% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://picsum.photos/800/456);">
+  <div class="container">
+    <h1>Cocktail Maker</h1>
+    <p>Find your favorite cocktails</p>
+    <%= link_to  "Add a new cocktail", new_cocktail_path, class: "btn btn-ghost" %>
+  </div>
+</div>
 
-  <div class="cards">
+<div class="container">
+  <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <div class="card">
-        <p><%= cocktail.name %></p>
+      <div class="col-12 col-md-6 col-lg-4">
+
         <%= link_to cocktail_path(cocktail) do %>
-          <button type="button" class="btn btn-light">See Details</button>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+            <%= cocktail.name %>
+          </div>
         <% end %>
+
       </div>
     <% end %>
-  </div>
+   </div>
 </div>
