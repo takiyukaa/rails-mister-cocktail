@@ -1,7 +1,14 @@
 <div class="container">
 
   <div class="card-white">
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg", alt: "alttext" %>
+
+    <% if @cocktail.photo.attached? %>
+      <% @path = @cocktail.photo.key %>
+    <% else %>
+      <% @path = ['YiYZiCX3Gp56WmN4ZNfzKp8n', 'FJxgWbLgmMLfmBp7u3xjAjsb', 'HBnqCUBU2XXNekM4pMAoBegi'].sample %>
+    <% end %>
+
+    <%= cl_image_tag @path, height: 400, crop: :fill %>
 
     <div class="card-cocktail-info">
 
