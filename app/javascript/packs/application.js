@@ -20,7 +20,7 @@ import { initSweetalert } from '../plugins/init_sweetalert';
 
 initSweetalert('#sweet-alert-demo', {
   title: "Are you sure?",
-  text: "This action cannot be reversed",
+  text: "This is a great alert, isn't it?",
   icon: "warning"
 }, (value) => {
   if (value) {

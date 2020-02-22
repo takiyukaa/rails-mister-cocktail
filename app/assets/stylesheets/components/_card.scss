@@ -41,6 +41,14 @@
     font-size: 24px;
   }
 
+  i {
+    color: $blue;
+  }
+
+  i:hover {
+    color: #6e9dc9;
+  }
+
   .card-cocktail-info {
     padding: 32px;
     width: 50%;

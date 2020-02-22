@@ -21,13 +21,17 @@
         <ul class="list-group list-group-flush">
           <% @cocktail.doses.each do |dose| %>
             <li class="list-group-item d-flex justify-content-between align-items-center">
+
               <%= "#{dose.description} of #{dose.ingredient.name}" %>
+
               <span>
-                <%= link_to dose_path(dose), method: :delete, id: "delete-link", class: "hidden" do %>
-                  <i class="fas fa-trash" id="sweet-alert-demo"></i>
-                <% end %>
+                <i class="fas fa-trash btn" id="sweet-alert-demo"></i>
+                <%= link_to "", dose_path(dose), method: :delete, id: "delete-link", class: "hidden" %>
               </span>
+
             </li>
+
+
           <% end %>
         </ul>
       </div>
