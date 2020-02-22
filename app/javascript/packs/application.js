@@ -21,7 +21,8 @@ import { initSweetalert } from '../plugins/init_sweetalert';
 initSweetalert('#sweet-alert-demo', {
   title: "Are you sure?",
   text: "This is a great alert, isn't it?",
-  icon: "warning"
+  icon: "warning",
+  button: "delete"
 }, (value) => {
   if (value) {
     const link = document.querySelector('#delete-link');
