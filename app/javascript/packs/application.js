@@ -18,14 +18,21 @@ import 'bootstrap';
 //import sweeralert
 import { initSweetalert } from '../plugins/init_sweetalert';
 
-initSweetalert('#sweet-alert-demo', {
-  title: "Are you sure?",
-  text: "This is a great alert, isn't it?",
-  icon: "warning",
-  button: "delete"
-}, (value) => {
-  if (value) {
-    const link = document.querySelector('#delete-link');
-    link.click();
-  }
-});
+const sweets = document.querySelectorAll('.sweet_alert')
+
+if (sweets.length > 0) {
+  sweets.forEach((sweet) => {
+    initSweetalert( `#sweet-alert-${sweet.dataset.id}`, {
+      title: "Are you sure?",
+      text: "This is a great alert, isn't it?",
+      icon: "warning",
+      button: "delete"
+    }, (value) => {
+      if (value) {
+        console.log(value)
+        const link = document.querySelector(`#dose-${sweet.dataset.id}`);
+        link.click();
+      }
+    });
+  })
+};

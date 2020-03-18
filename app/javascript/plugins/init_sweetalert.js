@@ -10,3 +10,14 @@ const initSweetalert = (selector, options = {}, callback = () => {}) => {
 };
 
 export { initSweetalert };
+
+// const initSweetalert = (selector, options = {}, callback = () => {}) => {
+//   const swalButtons = document.querySelectorAll(selector);
+//   if (swalButtons.length > 0) {
+//     swalButtons.forEach((swalButton) => {
+//       swalButton.addEventListener('click', () => {
+//         swal(options).then(callback(swalButton));
+//       });
+//     })
+//   }
+// };

@@ -9,16 +9,9 @@
 <div class="container">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
-
-      <% if cocktail.photo.attached? %>
-        <% @path = cocktail.photo.key %>
-      <% else %>
-        <% @path = ['YiYZiCX3Gp56WmN4ZNfzKp8n', 'FJxgWbLgmMLfmBp7u3xjAjsb', 'HBnqCUBU2XXNekM4pMAoBegi'].sample %>
-      <% end %>
-
        <div class="col-12 col-md-6 col-lg-4">
         <%= link_to cocktail_path(cocktail) do %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( <%= cl_image_path @path, height: 180, crop: :fill %> )">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( <%= cl_image_path cocktail.photo_path, height: 180, crop: :fill %> )">
             <%= cocktail.name %>
           </div>
         <% end %>
