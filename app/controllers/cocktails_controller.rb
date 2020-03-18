@@ -1,12 +1,11 @@
 class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all
-    @path = ""
   end
 
   def show
     @cocktail = Cocktail.find(params[:id])
-    @path = ""
+    @count = 1
   end
 
   def new

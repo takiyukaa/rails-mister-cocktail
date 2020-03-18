@@ -2,13 +2,7 @@
 
   <div class="card-white">
 
-    <% if @cocktail.photo.attached? %>
-      <% @path = @cocktail.photo.key %>
-    <% else %>
-      <% @path = ['YiYZiCX3Gp56WmN4ZNfzKp8n', 'FJxgWbLgmMLfmBp7u3xjAjsb', 'HBnqCUBU2XXNekM4pMAoBegi'].sample %>
-    <% end %>
-
-    <%= cl_image_tag @path, height: 400, crop: :fill %>
+    <%= cl_image_tag @cocktail.photo_path, height: 400, crop: :fill %>
 
     <div class="card-cocktail-info">
 
@@ -21,14 +15,12 @@
         <ul class="list-group list-group-flush">
           <% @cocktail.doses.each do |dose| %>
             <li class="list-group-item d-flex justify-content-between align-items-center">
-
               <%= "#{dose.description} of #{dose.ingredient.name}" %>
-
               <span>
-                <i class="fas fa-trash btn" id="sweet-alert-demo"></i>
-                <%= link_to "", dose_path(dose), method: :delete, id: "delete-link", class: "hidden" %>
-              </span>
 
+                 <i class="fas fa-trash btn sweet_alert" id="sweet-alert-<%= dose.id %>" data-id="<%= dose.id %>"></i>
+                <%= link_to "", dose_path(dose), method: :delete, id: "dose-#{dose.id}", class: "hidden" %>
+              </span>
             </li>
 
 
