@@ -26,7 +26,7 @@ if (sweets.length > 0) {
       title: "Are you sure?",
       text: "This is a great alert, isn't it?",
       icon: "warning",
-      button: "delete"
+      buttons: ["cancel", "delete"]
     }, (value) => {
       if (value) {
         console.log(value)
