@@ -19,17 +19,30 @@
 
 }
 
-.card-white {
-  margin: 40px 0;
-  background-color: white;
-  height: 400px;
+.card-cocktail {
   display: flex;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  justify-content: center;
+  height: 400px;
+  margin: 40px 0;
 
   img {
     height: 400px;
+    width: 100%;
     object-fit: cover;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
   }
+
+}
+
+
+.card-cocktail-info {
+  height: 400px;
+  padding: 32px;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+
+
 
   h1 {
     margin-bottom: 32px;
@@ -47,13 +60,6 @@
 
   i:hover {
     color: #6e9dc9;
-  }
-
-  .card-cocktail-info {
-    padding: 32px;
-    width: 50%;
-    height: 400px;
-    position: relative;
   }
 
   .add-dose {

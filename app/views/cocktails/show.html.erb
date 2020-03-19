@@ -1,41 +1,46 @@
 <div class="container">
 
-  <div class="card-white">
+  <div class="card-cocktail">
+
     <div class="row">
-    <div class="col-12 col-md-6 col-lg-6">
-      <%= cl_image_tag @cocktail.photo_path, height: 400, crop: :fill %>
-    </div>
 
-    <div class="col-12 col-md-6 col-lg-6">
-
-      <div class="card-cocktail-info">
-
-        <div class="card-cocktail-title">
-          <h1><%= @cocktail.name %></h1>
-        </div>
-
-        <div class="card-cocktail-ingredients">
-          <h2>Ingredients</h2>
-          <ul class="list-group list-group-flush">
-            <% @cocktail.doses.each do |dose| %>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <%= "#{dose.description} of #{dose.ingredient.name}" %>
-                <span>
-
-                   <i class="fas fa-trash btn sweet_alert" id="sweet-alert-<%= dose.id %>" data-id="<%= dose.id %>"></i>
-                  <%= link_to "", dose_path(dose), method: :delete, id: "dose-#{dose.id}", class: "hidden" %>
-                </span>
-              </li>
-
-
-            <% end %>
-          </ul>
-        </div>
-        <%= link_to new_cocktail_dose_path(@cocktail), class: 'add-dose btn btn-primary' do %>
-          Add a new dose
-        <% end %>
+      <div class="col-12 col-md-6 col-lg-6 p-0">
+        <%= cl_image_tag @cocktail.photo_path, height: 400, crop: :fill %>
       </div>
-    </div>
+
+      <div class="col-12 col-md-6 col-lg-6 p-0">
+
+        <div class="card-white">
+
+          <div class="card-cocktail-info">
+
+            <div class="card-cocktail-title">
+              <h1><%= @cocktail.name %></h1>
+            </div>
+
+            <div class="card-cocktail-ingredients">
+              <h2>Ingredients</h2>
+              <ul class="list-group list-group-flush">
+                <% @cocktail.doses.each do |dose| %>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <%= "#{dose.description} of #{dose.ingredient.name}" %>
+                    <span>
+
+                       <i class="fas fa-trash btn sweet_alert" id="sweet-alert-<%= dose.id %>" data-id="<%= dose.id %>"></i>
+                      <%= link_to "", dose_path(dose), method: :delete, id: "dose-#{dose.id}", class: "hidden" %>
+                    </span>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+
+            <%= link_to new_cocktail_dose_path(@cocktail), class: 'add-dose btn btn-primary' do %>
+              Add a new dose
+            <% end %>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
